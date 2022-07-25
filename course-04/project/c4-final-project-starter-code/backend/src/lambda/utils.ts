@@ -1,4 +1,5 @@
 import { APIGatewayProxyEvent } from "aws-lambda";
+import * as winston from "winston";
 import { parseUserId } from "../auth/utils";
 
 /**
@@ -13,4 +14,31 @@ export function getUserId(event: APIGatewayProxyEvent): string {
   const jwtToken = split[1]
 
   return parseUserId(jwtToken)
+}
+
+export function createLogger(loggerName: string) {
+  return winston.createLogger({
+    level: 'info',
+    format: winston.format.json(),
+    defaultMeta: { name: loggerName },
+    transports: [
+      new winston.transports.Console()
+    ]
+  })
+}
+
+export function getToken(authHeader: string): string {
+
+  if (!authHeader) {
+    throw new Error('No authentication header');
+  }
+
+  if (!authHeader.toLowerCase().startsWith('bearer ')) {
+    throw new Error('Invalid authentication header');
+  }
+
+  const split = authHeader.split(' ');
+  const token = split[1];
+
+  return token;
 }
