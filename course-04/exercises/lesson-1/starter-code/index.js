@@ -7,7 +7,9 @@ const serviceName = process.env.SERVICE_NAME
 const url = process.env.URL
 
 // CloudWatch client
-const cloudwatch = new AWS.CloudWatch();
+const cloudwatch = new AWS.DynamoDB.DocumentClient();
+console.log(cloudwatch)
+
 
 exports.handler = async (event) => {
   // TODO: Use these variables to record metric values
@@ -42,3 +44,9 @@ exports.handler = async (event) => {
 function timeInMs() {
   return new Date().getTime()
 }
+
+// https://udacitygovernment.zendesk.com/hc/en-us/requests/new
+
+// learning yaml
+
+// https://429019722638.signin.aws.amazon.com/console
