@@ -167,46 +167,24 @@ custom:
         version: '1.0.0'
         title: serverless-api
         description: serverless-api
-    models:
+       models:
       - name: CreateTodoRequest
-        contentType: "application/json"
-        schema:
-          required:
-            - name
-            - dueDate
-          properties:
-            name:
-              minLength: 1
-              type: string
-            dueDate:
-              type: string
+        contentType: application/json
+        schema: ${file(models/create-todo-request.json)}
       - name: UpdateTodoRequest
-        contentType: "application/json"
-        schema:
-          required:
-            - name
-            - dueDate
-            - done
-          properties:
-            name:
-              minLength: 1
-              type: string
-            dueDate:
-              type: string
-            done:
-              type: boolean
+        contentType: application/json
+        schema: ${file(models/update-todo-request.json)}
+
+ iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "xray:PutTraceSegments"
+        - "xray:PutTelemetryRecords"
+      Resource:
+        - "*"
   
   logs:
     restApi: true
-
-  #iam:
-   # role:
-    #  statements:
-     #   - Effect: Allow
-     #     Action:
-     #       - xray:PutTelemetryRecords
-     #       - xray:PutTraceSegments
-     #     Resource: "*"
 
 
 functions:
