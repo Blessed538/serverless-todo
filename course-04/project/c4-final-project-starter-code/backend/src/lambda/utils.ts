@@ -19,6 +19,7 @@ export function getUserId(event: APIGatewayProxyEvent): string {
   return parseUserId(jwtToken)
 }
 
+
 export function success(body: any) {
   logger.info("RESPONSE", buildResponse(200, body));
   return buildResponse(200, body);
