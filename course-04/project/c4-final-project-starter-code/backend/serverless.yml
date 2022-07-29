@@ -240,3 +240,12 @@ resources:
 # here 
 
 
+  # AuthLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-2:923493413116:function:serverless-todo-app-dev-Auth:6
+  # GenerateUploadUrlLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-2:923493413116:function:serverless-todo-app-dev-GenerateUploadUrl:7
+  # UpdateTodoLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-2:923493413116:function:serverless-todo-app-dev-UpdateTodo:6
+  # GetTodosLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-2:923493413116:function:serverless-todo-app-dev-GetTodos:8
+  # DeleteTodoLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-2:923493413116:function:serverless-todo-app-dev-DeleteTodo:6
+  # EnterpriseLogAccessIamRole: arn:aws:iam::923493413116:role/serverless-todo-app-dev-EnterpriseLogAccessIamRole-7AEFYO1UG739
+  # CreateTodoLambdaFunctionQualifiedArn: arn:aws:lambda:us-east-2:923493413116:function:serverless-todo-app-dev-CreateTodo:7
+  # ServiceEndpoint: https://pttlzl3cad.execute-api.us-east-2.amazonaws.com/dev
+  # ServerlessDeploymentBucketName: serverless-todo-app-dev-serverlessdeploymentbucke-18csofozlbp7u
