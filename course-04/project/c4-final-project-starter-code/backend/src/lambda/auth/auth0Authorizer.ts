@@ -80,6 +80,7 @@ function getToken(authHeader: string): string {
   return token
 }
 
+
 async function getCertificateByKeyId(keyId: string): Promise<string> {
   if (cachedCertificate) return cachedCertificate
 
