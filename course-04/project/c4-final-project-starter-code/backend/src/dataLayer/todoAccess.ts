@@ -9,7 +9,7 @@ const XAWS = AWSXRay.captureAWS(AWS)
 const todosTable = process.env.TODOS_TABLE
 const todosByUserIndex = process.env.TODOS_CREATED_AT_INDEX
 const docClient: DocumentClient = new XAWS.DynamoDB.DocumentClient()
-
+const bucketName = process.env.S3_BUCKET_NAME
 
 export async function createTodoItem(item: TodoItem): Promise<void> {
   await docClient
@@ -100,7 +100,7 @@ export async function generatedUploadUrl(todoId: string): Promise<string> {
   console.log("Generating URL");
 
   const url = this.s3Client.getSignedUrl('putObject', {
-      Bucket: this.s3BucketName,
+      Bucket: bucketName,
       Key: todoId,
       Expires: 1000,
   });
