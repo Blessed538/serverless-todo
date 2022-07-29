@@ -1,7 +1,7 @@
-Access key: AKIA5OBD7GD6JNZURKXQ
+Access key: AKIA5OBD7GD6HO2T6KLG
 
-Secret access key: 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
+Secret access key: nm+K3B6y7Z7pvNJ0K6J/kH5OpyZLXg7TZMPEaZm7
 
-sls config credentials --provider aws --key AKIA5OBD7GD6JNZURKXQ --secret 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 --profile serverless --overwrite
+sls config credentials --provider aws --key AKIA5OBD7GD6HO2T6KLG --secret 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 --profile serverless --overwrite
 
 
