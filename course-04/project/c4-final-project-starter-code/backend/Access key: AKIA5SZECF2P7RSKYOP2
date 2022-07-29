@@ -1,8 +1,8 @@
-Access key: AKIA5OBD7GD6D4VISXUR
+Access key: AKIA5OBD7GD6JIHRCTEO
 
-Secret access key: 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
+Secret access key: 5FNPlIIBT2Le9HswJV9Rk0S99aPYJ7SeMT7vigy3
 
-sls config credentials --provider aws --key AKIA5OBD7GD6D4VISXUR --secret 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 --profile serverless --overwrite
+sls config credentials --provider aws --key AKIA5OBD7GD6JIHRCTEO --secret 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 --profile serverless --overwrite
 
 
 https://pttlzl3cad.execute-api.us-east-2.amazonaws.com/dev

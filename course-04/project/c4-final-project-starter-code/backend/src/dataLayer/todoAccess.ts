@@ -95,3 +95,16 @@ export async function updateAttachmentInTodoItem(
 
   return
 }
+
+export async function generatedUploadUrl(todoId: string): Promise<string> {
+  console.log("Generating URL");
+
+  const url = this.s3Client.getSignedUrl('putObject', {
+      Bucket: this.s3BucketName,
+      Key: todoId,
+      Expires: 1000,
+  });
+  console.log(url);
+
+  return url as string;
+}

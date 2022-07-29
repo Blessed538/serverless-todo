@@ -2,7 +2,7 @@ import { TodoItem } from '../models/TodoItem'
 import { CreateTodoRequest } from '../requests/CreateTodoRequest'
 import { createLogger } from '../utils/logger'
 import * as uuid from 'uuid'
-import { createTodoItem, deleteTodoItem, getTodoItemsByUser, updateAttachmentInTodoItem, updateTodoItem } from '../dataLayer/todoAccess'
+import { createTodoItem, deleteTodoItem, generatedUploadUrl, getTodoItemsByUser, updateAttachmentInTodoItem, updateTodoItem } from '../dataLayer/todoAccess'
 import CustomError from '../utils/failure'
 import { UpdateTodoRequest } from '../requests/UpdateTodoRequest'
 import { TodoUpdate } from '../models/TodoUpdate'
@@ -126,4 +126,8 @@ export async function updateAttachmentUrl(
     logger.error(error)
     throw new CustomError(error.message, 500)
   }
+}
+
+export function generateUploadUrl(todoId: string): Promise<string> {
+  return generatedUploadUrl(todoId);
 }
