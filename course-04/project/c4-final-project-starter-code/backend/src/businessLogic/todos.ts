@@ -113,7 +113,7 @@ export async function updateAttachmentUrl(
   try {
 
     const attachmentUrl = getAttachmentUrl(attachmentId)
-    await updateAttachmentInTodoItem(todoId, attachmentUrl)
+    await updateAttachmentInTodoItem(userId, todoId, attachmentUrl)
 
     logger.info(
       'AttachmentURL updated successfully',{

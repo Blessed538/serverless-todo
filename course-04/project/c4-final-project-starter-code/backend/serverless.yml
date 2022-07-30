@@ -1,7 +1,7 @@
 
 org: blesseddominic98
-app: serverless-todo-apps
-service: serverless-todo-apps
+app: serverless-todo-app
+service: serverless-todo-app
 
 plugins:
   - serverless-webpack
@@ -22,9 +22,9 @@ provider:
     apiGateway: true
 
   environment:
-    PROJECT_NAME: udagrams-serverless
-    TODOS_TABLE: udagrams-serverless-${self:provider.stage}
-    S3_BUCKET_NAME: udagrams-serverless-${self:provider.stage}
+    PROJECT_NAME: udagram-serverless
+    TODOS_TABLE: udagram-serverless-${self:provider.stage}
+    S3_BUCKET_NAME: udagram-serverless-${self:provider.stage}
     TODOS_CREATED_AT_INDEX: CreatedAtIndex
     SIGNED_URL_EXPIRATION: 300
     AUTH0_JWKS_URL: https://dev-58yxezd7.us.auth0.com/.well-known/jwks.json
@@ -152,11 +152,13 @@ functions:
       - Effect: Allow
         Action:
           - s3:PutObject
+          - s3:GetObject
         Resource: arn:aws:s3:::${self:provider.environment.S3_BUCKET_NAME}/*
       - Effect: Allow
         Action:
           - dynamodb:UpdateItem
           - dynamodb:GetItem
+          - dynamodb:Query
         Resource: arn:aws:dynamodb:${self:provider.region}:*:table/${self:provider.environment.TODOS_TABLE}
 
 
