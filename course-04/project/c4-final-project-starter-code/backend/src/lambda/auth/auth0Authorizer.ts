@@ -5,7 +5,6 @@ import { createLogger } from '../../utils/logger'
 import Axios from 'axios'
 import { JwtPayload } from '../../auth/JwtPayload'
 import { Jwt } from '../../auth/Jwt'
-
 const logger = createLogger('auth');
 
 // Todo
