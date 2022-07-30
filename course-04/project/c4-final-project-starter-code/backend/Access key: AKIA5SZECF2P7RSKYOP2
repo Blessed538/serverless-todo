@@ -1,9 +1,8 @@
-Access key: AKIAVIACUQJO3YMT23OZ
+Access key: AKIAVIACUQJOUCTDQMW4
 
 
-Secret access key: nm+K3B6y7Z7pvNJ0K6J/kH5OpyZLXg7TZMPEaZm7
+Secret access key: sIt107VAa4iJZrWDO5EP00F/VrB4qFIpejhIaZIo
 
-sls config credentials --provider aws --key AKIAVIACUQJO3YMT23OZ --secret 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
- --profile serverless --overwrite
+sls config credentials --provider aws --key AKIAVIACUQJOUCTDQMW4 --secret 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 --profile serverless --overwrite
 
 

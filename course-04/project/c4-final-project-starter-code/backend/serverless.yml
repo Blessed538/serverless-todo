@@ -1,7 +1,7 @@
 
 org: blesseddominic98
-app: serverless-todo-app
-service: serverless-todo-app
+app: serverless-todo-apps
+service: serverless-todo-apps
 
 plugins:
   - serverless-webpack
@@ -15,16 +15,16 @@ provider:
   runtime: nodejs12.x
   lambdaHashingVersion: '20201221'
   stage: ${opt:stage, 'dev'}
-  region: ${opt:region, 'us-east-2'}
+  region: ${opt:region, 'us-east-1'}
 
   tracing:
     lambda: true
     apiGateway: true
 
   environment:
-    PROJECT_NAME: udagram-serverless
-    TODOS_TABLE: udagram-serverless-${self:provider.stage}
-    S3_BUCKET_NAME: udagram-serverless-${self:provider.stage}
+    PROJECT_NAME: udagrams-serverless
+    TODOS_TABLE: udagrams-serverless-${self:provider.stage}
+    S3_BUCKET_NAME: udagrams-serverless-${self:provider.stage}
     TODOS_CREATED_AT_INDEX: CreatedAtIndex
     SIGNED_URL_EXPIRATION: 300
     AUTH0_JWKS_URL: https://dev-58yxezd7.us.auth0.com/.well-known/jwks.json
@@ -157,7 +157,7 @@ functions:
         Action:
           - dynamodb:UpdateItem
           - dynamodb:GetItem
-        Resource: arn:aws:s3:::${self:provider.environment.S3_BUCKET_NAME}/*
+        Resource: arn:aws:dynamodb:${self:provider.region}:*:table/${self:provider.environment.TODOS_TABLE}
 
 
 

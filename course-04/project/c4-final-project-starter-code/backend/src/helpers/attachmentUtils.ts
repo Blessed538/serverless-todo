@@ -17,7 +17,7 @@ export async function getUploadUrl(attachmentId: string): Promise<string> {
     const uploadUrl = await s3.getSignedUrl('putObject', {
     Bucket: bucketName,
     Key: attachmentId,
-    Expires: Number(urlExpiration)
+    Expires: parseInt(urlExpiration) || 1000 
     })
   return uploadUrl
 }

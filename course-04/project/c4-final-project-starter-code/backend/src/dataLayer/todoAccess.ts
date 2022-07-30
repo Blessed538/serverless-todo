@@ -79,19 +79,21 @@ export async function deleteTodoItem(userId: string, todoId: string): Promise<To
 }
 
 export async function updateAttachmentInTodoItem(
-  // userId: string,
   todoId: string,
   attachmentUrl: string
 ): Promise<void> {
     await docClient
     .update({
       TableName: todosTable,
-      Key: { todoId: todoId },
+      Key: {
+        todoId: todoId
+      },
       UpdateExpression: 'set attachmentUrl = :attachmentUrl',
       ExpressionAttributeValues: {
         ':attachmentUrl': attachmentUrl
-      },
+      }
     }).promise()
 
   return
 }
+
